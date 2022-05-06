@@ -233,7 +233,16 @@ Public Class SethRasRentalForm
         Seniorcheckbox.Checked = False
     End Sub
 
-    '
+    'Uses clear all function
+    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
+        ClearAll()
+    End Sub
+
+    'Exit program
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        Me.Close()
+    End Sub
+
     Sub displayTotal()
         MileageChargeTextBox.Text = Miles
         MileageChargeTextBox.Text = MilesValidation()
@@ -278,24 +287,13 @@ Public Class SethRasRentalForm
     Private Sub SeniorCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles Seniorcheckbox.CheckedChanged
         DiscountSenior = "Senior"
     End Sub
-
-    'Exit program
-    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
-        Me.Close()
-    End Sub
-
-    'Uses clear all function
-    Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
-        ClearAll()
-    End Sub
-
     'Uses summary function put in a display box
     Private Sub SummaryButton_Click(sender As Object, e As EventArgs) Handles SummaryButton.Click
         Dim er As Integer
         er = MsgBox($"Total Customers: {customerT}" + vbCrLf +
                $"Total Miles Driven: {MilesT} mi" + vbCrLf +
                $"Total Charges: ${ChargesT}" + vbCrLf +
-               "Would you like to clear this history?", MsgBoxStyle.Question.YesNo, "Clear form")
+               "Clear All?", MsgBoxStyle.Question.YesNo, "Clear")
         If er = 6 Then
             ClearAll()
             customerT = 0
@@ -303,4 +301,6 @@ Public Class SethRasRentalForm
             ChargesT = 0
         End If
     End Sub
+
+
 End Class
