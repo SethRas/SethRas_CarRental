@@ -1,6 +1,6 @@
 ﻿'Seth Rasmussen
 'RCET 0256
-'
+'https://github.com/SethRas/SethRas_CarRental.git
 
 Option Explicit On
 Option Strict Off
@@ -287,6 +287,7 @@ Public Class SethRasRentalForm
     Private Sub SeniorCheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles Seniorcheckbox.CheckedChanged
         DiscountSenior = "Senior"
     End Sub
+
     'Uses summary function put in a display box
     Private Sub SummaryButton_Click(sender As Object, e As EventArgs) Handles SummaryButton.Click
         Dim er As Integer
@@ -301,6 +302,4 @@ Public Class SethRasRentalForm
             ChargesT = 0
         End If
     End Sub
-
-
 End Class
